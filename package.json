@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "proxy": "https://inv-app-backend.onrender.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",

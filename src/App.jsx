@@ -2,15 +2,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import axios from "axios";
+// import axios from "axios";
 import CartPage from "./pages/CartPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import CustomerPage from "./pages/CustomerPage";
 import BillsPage from "./pages/BillsPage";
 
-axios.defaults.baseURL = "https://inv-app-backend.onrender.com";
-axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "https://inv-app-backend.onrender.com";
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (

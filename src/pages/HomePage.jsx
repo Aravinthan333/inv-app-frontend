@@ -40,7 +40,9 @@ const Homepage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        const { data } = await axios.get("/api/products/getProducts");
+        const { data } = await axios.get(
+          "https://inv-app-backend.onrender.com/api/products/getProducts"
+        );
         setProductsData(data);
         dispatch({ type: "HIDE_LOADING" });
       } catch (err) {

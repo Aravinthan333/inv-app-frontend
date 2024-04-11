@@ -14,7 +14,10 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const res = await axios.post(`/api/users/login`, value);
+      const res = await axios.post(
+        `https://inv-app-backend.onrender.com/api/users/login`,
+        value
+      );
       dispatch({ type: "HIDE_LOADING" });
       if (res.data.message === "Login Fail") {
         return message.error("User Not Found");

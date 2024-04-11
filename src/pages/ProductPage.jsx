@@ -23,7 +23,9 @@ const ProductPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const { data } = await axios.get(`/api/products/getProducts`);
+      const { data } = await axios.get(
+        `https://inv-app-backend.onrender.com/api/products/getProducts`
+      );
       setProductsData(data);
       dispatch({ type: "HIDE_LOADING" });
       console.log(data);
@@ -46,7 +48,10 @@ const ProductPage = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/products/deleteProduct", { itemId: record._id });
+      await axios.post(
+        "https://inv-app-backend.onrender.com/api/products/deleteProduct",
+        { itemId: record._id }
+      );
       message.success("Item Deleted Succesfully");
       getAllItems();
       setPopupModal(false);
@@ -121,7 +126,10 @@ const ProductPage = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        await axios.post(`/api/products/addProduct`, value);
+        await axios.post(
+          `https://inv-app-backend.onrender.com/api/products/addProduct`,
+          value
+        );
 
         message.success("Item Added Succesfully");
         getAllItems();
@@ -138,10 +146,13 @@ const ProductPage = () => {
           type: "SHOW_LOADING",
         });
         console.log("done1111");
-        await axios.put("/api/products/editProduct", {
-          ...value,
-          itemId: editItem._id,
-        });
+        await axios.put(
+          "https://inv-app-backend.onrender.com/api/products/editProduct",
+          {
+            ...value,
+            itemId: editItem._id,
+          }
+        );
         message.success("Item Updated Succesfully");
         getAllItems();
         setPopupModal(false);
